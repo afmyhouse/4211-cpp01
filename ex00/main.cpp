@@ -6,7 +6,7 @@
 /*   By: antoda-s <antoda-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 18:02:01 by antoda-s          #+#    #+#             */
-/*   Updated: 2024/04/24 09:44:47 by antoda-s         ###   ########.fr       */
+/*   Updated: 2024/09/27 10:41:35 by antoda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,4 @@ int	main(int argc, char **argv, char **env)
 		randomChump((std::string)argv[2]);
 		delete pZombie;
 	}
-
 }
