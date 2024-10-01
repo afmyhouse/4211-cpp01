@@ -1,7 +1,9 @@
 # compilation, linking and cleaning commands/flags
 CXX = c++
-CXXFLAGS = -Wextra -Werror -Wall -std=c++98 -g -pedantic
-CXXDEBUG = -fsanitize=address -g3
+CXXWARNS = -Wextra -Werror -Wall
+CXXRESTR = -std=c++98 -pedantic
+CXXDEBUG = -fsanitize=address -g3 -fno-limit-debug-info
+CXXFLAGS = $(CXXWARNS) $(CXXRESTR) $(CXXDEBUG)
 MKF = --no-print-directory
 AR = ar -rcs
 RM = rm -rf
@@ -52,11 +54,11 @@ all: $(NAME)
 $(NAME): $(OBJSD) $(TARGET)
 	@printf "\n $(_SUCCESS) $(BOLD)$(NAME)$(RESET) objects ready! \n"
 	@printf "\n $(_INFO) Linking $(BOLD)$(NAME)$(RESET) executable...\n "
-	$(CXX) $(CXXFLAGS) $(TARGET) -o $@ -I $(INCSD)
+	$(CXX) $(CXXFLAGS) $(CXXDEBUG) $(TARGET) -o $@ -I $(INCSD)
 	@printf "$(GRN)█$(RESET)"
 
 $(OBJSD)%.o: $(SRCSD)%.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@ -I $(INCSD)
+	$(CXX) $(CXXFLAGS) $(CXXDEBUG) -c $< -o $@ -I $(INCSD)
 	@printf "$(YLW)█$(RESET)"
 
 $(OBJSD):
