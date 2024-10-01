@@ -19,8 +19,9 @@ int main(int argc, char **argv, char **env) {
 		// pointer to object: HEAP MEMMORY
 		Zombie *pZombie = newZombie((std::string)argv[1]);
 		pZombie->announce();
+		delete pZombie;
+		
 		// function to create object : STACK MEMMORY
 		randomChump((std::string)argv[2]);
-		delete pZombie;
 	}
 }
