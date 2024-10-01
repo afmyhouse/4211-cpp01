@@ -3,7 +3,8 @@
 
 int main(void) {
 	{
-		Weapon w1 = Weapon("type 1.1");
+		std::string type = "type 1.1";
+		Weapon w1 = Weapon(type);
 		Weapon w2 = Weapon("type 2.1");
 		HumanA A1("A1", w1);
 		HumanA A2("A2", w2);
@@ -17,7 +18,8 @@ int main(void) {
 		A2.attack();
 	}
 	{
-		Weapon w1 = Weapon("type 1.1");
+		std::string type = "type 1.1";
+		Weapon w1 = Weapon(type);
 		Weapon w2 = Weapon("type 2.1");
 		HumanB B1("B1");
 		HumanB B2("B2");

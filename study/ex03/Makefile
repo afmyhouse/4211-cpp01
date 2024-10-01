@@ -1,6 +1,7 @@
 # compilation, linking and cleaning commands/flags
 CXX = c++
 CXXFLAGS = -Wextra -Werror -Wall -std=c++98 -g -pedantic
+CXXDEBUG = -fsanitize=address -g3
 MKF = --no-print-directory
 AR = ar -rcs
 RM = rm -rf
